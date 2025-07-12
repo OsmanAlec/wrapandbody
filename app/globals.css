@@ -3,13 +3,12 @@
 @theme {
   --color-eerie-black: #1F2722;
   --color-dark-green: #364D37;
-  --color-rose-gold: #D3A88D;
+  --color-darker-green: #2B3A2D;
+  --color-brighter-rose-gold: #E4A177;
+  --color-rose-gold: #E19566;
   --color-off-white: #EDE2DB;
   --color-white-smoke: #F5F5F5;
-      
 }
-
-
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -23,9 +22,49 @@ body {
   background-color: var(--color-rose-gold);
 }
 
+.card:hover {
+  background-color: var(--color-brighter-rose-gold);
+}
+
 .card-outer {
   border-width: 2px;
   border-style: solid; 
   border-color: var(--color-rose-gold);
   padding: 2px;
+}
+
+.card-outer:hover {
+  border-color: var(--color-brighter-rose-gold);
+}
+
+.opening-hours-table {
+  color: var(--color-dark-green);
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.opening-hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted var(--color-dark-green);
+  font-size: 1.1rem;
+}
+
+.opening-hours-row:last-child {
+  border-bottom: none;
+}
+
+.opening-hours-day {
+  flex: 1;
+  text-align: left;
+}
+
+.opening-hours-time {
+  flex: 1;
+  text-align: right;
+  font-weight: 500;
 }

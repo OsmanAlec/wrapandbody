@@ -1,54 +1,81 @@
 import Image from "next/image";
+import ReviewSlider from './components/reviewslider';
+
+
+const hours = [
+  { day: "Monday", time: "10:00 - 20:00" },
+  { day: "Tuesday", time: "10:00 - 20:00" },
+  { day: "Wednesday", time: "10:00 - 20:00" },
+  { day: "Thursday", time: "10:00 - 20:00" },
+  { day: "Friday", time: "10:00 - 20:00" },
+  { day: "Saturday", time: "10:00 - 18:00" },
+  { day: "Sunday", time: "10:00 - 18:00" },
+];
 
 export default function Home() {
   return (
     <div className="w-full mt-20 py-8">
-      {/* Hero Section */}
+      {/* Header Section */}
       <section className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-2">Welcome to Wrap and Shape</h1>
-        <p className="text-lg text-gray-600">Body shaping, reducing water weight and fat loss. </p>
+      <div className="w-full h-[calc(50vh+10rem)] -z-20 relative">
+        <Image
+          src="/placeholder.png"
+          alt="Header Image"
+          fill
+          className="header-image object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-navy bg-opacity-50 flex flex-col items-center justify-center">
+          <h1 className="text-4xl font-bold mb-2 z-2">Welcome to Wrap and Shape</h1>
+          <p className="text-lg text-gray-600 z-2">Sculpt, detox, reduce.</p>
+        </div>
+      </div>
+
       </section>
 
       {/* Services */}
       <section className="mb-12 py-6 text-center w-full  bg-white-smoke">
         <h2 className="text-2xl font-semibold mb-4">Treatments</h2>
+        <p className="pb-5"> Our treatments deliver comprehensive results: redefined body contours, reduced bloating from excess fluid, and targeted fat loss</p>
         <div className="flex gap-6 items-center flex-col text-white-smoke">
-          <div className="card-outer">
+          <a href="/services" className="card-outer">
             <h3 className="font-bold card">
-              <a href="/services">Body Wraps</a></h3>
-          </div>
-          <div className="card-outer">
+              Body Wraps</h3>
+          </a>
+          <a href="/services" className="card-outer">
             <h3 className="font-bold card">
-              <a href="/services">Massage & Mechanical Therapies</a></h3>
-          </div>
-          <div className="card-outer">
+              Massage & Mechanical Therapies</h3>
+          </a>
+          <a href="/services" className="card-outer">
             <h3 className="font-bold card">
-              <a href="/services">Fat Reduction & Skin Tightening</a></h3>
-          </div>
+              Fat Reduction & Skin Tightening</h3>
+          </a>
         </div>
       </section>
 
-      {/* About Us */}
-      <section className="mb-12 m-10">
-        <h2 className="text-2xl font-semibold mb-4">About Us</h2>
-        <p>
-          Iwan Boutique Salon is dedicated to providing a personalized and luxurious experience. 
-          Our team of professionals is passionate about beauty and committed to making you look and feel your best.
-        </p>
-      </section>
+    
 
       {/* Reviews */}
-      <section className="mb-12 m-5">
+      <section className="mb-12 m-10 p-10 text-center">
         <h2 className="text-2xl font-semibold mb-4">Client Reviews</h2>
-        <div className="space-y-4">
-          <blockquote className="border-l-4 pl-4 italic text-gray-700">
-            "Absolutely loved my new hairstyle! The staff is so friendly and talented." – Sarah K.
-          </blockquote>
-          <blockquote className="border-l-4 pl-4 italic text-gray-700">
-            "A relaxing atmosphere and top-notch service every time." – Maria L.
-          </blockquote>
+          <ReviewSlider />
+      </section>
+
+
+      {/* Opening Hours */}
+      <section className="mb-12 py-6 text-center w-full">
+        <h2 className="text-3xl font-semibold mb-4">Opening Hours</h2>
+        <div className="opening-hours-table">
+          {hours.map(({ day, time }) => (
+            <div className="opening-hours-row" key={day}>
+              <span className="opening-hours-day">{day}</span>
+              <span className="opening-hours-time">{time}</span>
+            </div>
+          ))}
         </div>
       </section>
     </div>
+
+    
   );
 }
