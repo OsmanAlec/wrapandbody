@@ -14,7 +14,7 @@ const hours = [
 
 export default function Home() {
   return (
-    <div className="w-full mt-20 py-8">
+    <div className="w-full py-8">
       {/* Header Section */}
       <section className="text-center mb-12">
       <div className="w-full h-[calc(50vh+10rem)] -z-20 relative">
