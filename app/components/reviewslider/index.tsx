@@ -31,7 +31,7 @@ const ReviewSlider = () => {
                 <h3 className="text-xl font-semibold 
                                text-center text-gray-800">{review.name}
                                </h3>
-                <div>
+                <div className='text-center'>
                   {Array.from({ length: review.stars }).map((_, i) => (
                     <svg
                       key={i}

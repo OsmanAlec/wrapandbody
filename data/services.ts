@@ -45,6 +45,11 @@ export const services = {
         "Pressotherapy works by using a machine to create rhythmic compression and decompression on the body, specifically targeting the lymphatic system. This gentle, wave-like pressure helps to stimulate the lymphatic system, which is crucial for removing waste products and fluid buildup. The device, often connected to inflatable boots, leggings, or cuffs, inflates and deflates in a controlled manner, mimicking a manual lymphatic massage. This helps to improve circulation, reduce swelling, and promote overall lymphatic drainage.",
       price: "40 euro per session",
     },
+    {
+      name: "Japanese Head Spa",
+      description: "The head spa is a head (skin) massage treatment in which pressure points are gently stimulated, which improves blood flow to the hair follicles. In addition to these stimulations, it also provides immediate stress reduction and better sleep. The hair follicles and the sebaceous glands are both cleaned. This leads to better hair growth and acts as a detox for the scalp. The duration of the treatment is 60 minutes. We finish the treatment by quickly blow-drying. We do NOT style the hair.",
+      price: "65 euro per session",
+    },
   ],
 
   fatreduction: [

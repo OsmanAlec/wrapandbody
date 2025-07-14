@@ -32,7 +32,7 @@ const Services = () => {
 
   return (
     <div>
-      <h1 className={`text-7xl p-12 pb-5 bg-off-white ${merriweather.className}`}>Services</h1>
+      <h1 className={`text-7xl p-12 pb-5 bg-white-smoke ${merriweather.className}`}>Services</h1>
       <div className='my-0 m-10 py-5 flex-col inline-flex text-center'>
         <div className='card-outer'>
           {categories.map((category) => (

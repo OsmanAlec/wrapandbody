@@ -36,6 +36,13 @@ const Sidebar = ({
 
         <ul className={merriweather.className + "sidebar-nav text-center leading-relaxed text-xl flex flex-col gap-8"}>
           <li>
+            <Link href="https://www.fresha.com/a/wrap-shape-ashbourne-rath-cross-business-park-sdtuch0n"
+            className="block px-8 py-3 border rounded border-rose-gold bg-dark-green text-rose-gold font-bold">
+                <p>Book Now</p>
+            </Link>
+          </li>
+        
+          <li>
             <Link
               href="/services"
               onClick={toggle}
@@ -62,6 +69,7 @@ const Sidebar = ({
               Guidelines
             </Link>
           </li>
+      
         </ul>
       </div>
     </>

@@ -28,6 +28,12 @@ const Navbar = ({ toggle }: { toggle: () => void }) => {
                         <p>Guidelines</p>
                     </Link>
                 </li>
+                <li>
+                    <Link href="https://www.fresha.com/a/wrap-shape-ashbourne-rath-cross-business-park-sdtuch0n"
+                    className="font-bold text-dark-green bg-rose-gold block px-8 py-3 rounded">
+                        <p>Book Now</p>
+                    </Link>
+                </li>
             </ul>
 
             <button type="button" className="inline-flex items-center md:hidden cursor-pointer"
