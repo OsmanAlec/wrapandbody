@@ -22,7 +22,7 @@ export default function Contact() {
         <motion.div
           variants={fadeInDown}
           initial="hidden"
-          whileInView={fadeInDown}
+          whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
         >
           <Image
