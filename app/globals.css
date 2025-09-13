@@ -155,41 +155,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Animation classes */
-.animate-fade-in-down {
-  animation: fadeInDown 0.7s cubic-bezier(.4,0,.2,1);
-}
-.animate-fade-in-up {
-  animation: fadeInUp 0.7s cubic-bezier(.4,0,.2,1);
-}
-.animate-fade-in-left {
-  animation: fadeInLeft 0.7s cubic-bezier(.4,0,.2,1);
-}
-.animate-fade-in-right {
-  animation: fadeInRight 0.7s cubic-bezier(.4,0,.2,1);
-
-
-}
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-
-@keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-40px);}
-  100% { opacity: 1; transform: translateY(0);}
-}
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(40px);}
-  100% { opacity: 1; transform: translateY(0);}
-}
-@keyframes fadeInLeft {
-  0% { opacity: 0; transform: translateX(-40px);}
-  100% { opacity: 1; transform: translateX(0);}
-}
-@keyframes fadeInRight {
-  0% { opacity: 0; transform: translateX(40px);}
-  100% { opacity: 1; transform: translateX(0);}
-}
-
 /* Navbar link underscore animation */
 nav ul li a {
   position: relative;
@@ -214,4 +179,15 @@ nav ul li a::after {
 nav ul li a:hover::after,
 nav ul li a:focus::after {
   transform: scaleX(1);
+}
+
+.footer-link {
+  color: var(--color-off-white);
+  transition: color .18s ease, transform .18s ease;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--color-rose-gold);
+  transform: translateY(-2px);
 }

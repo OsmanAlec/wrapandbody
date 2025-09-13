@@ -1,9 +1,14 @@
 "use client";
-import { services } from '@/data/services';
-import React, { useState } from 'react';
-import { Merriweather } from 'next/font/google';
+import { services } from "@/data/services";
+import React, { useState } from "react";
+import { Merriweather } from "next/font/google";
+import { motion } from "motion/react";
+import { fadeInDown, fadeInUp } from "../components/animations";
 
-const merriweather = Merriweather({ subsets: ['latin'], weight: ['400', '700'] });
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export interface Treatment {
   name: string;
@@ -21,43 +26,83 @@ export interface CategoryButton {
 }
 
 const categories: CategoryButton[] = [
-  { key: 'bodywraps', title: 'Bodywraps' },
-  { key: 'massages', title: 'Massage & Mechanical Therapies' },
-  { key: 'fatreduction', title: 'Fat Reduction & Skin Tightening' },
+  { key: "bodywraps", title: "Bodywraps" },
+  { key: "massages", title: "Massage & Mechanical Therapies" },
+  { key: "fatreduction", title: "Fat Reduction & Skin Tightening" },
 ];
 
 const Services = () => {
-  const [activeCategory, setActiveCategory] = useState(Object.keys(services)[0]);
-  const activeTreatments: Treatment[] = services[activeCategory as keyof typeof services];
+  const [activeCategory, setActiveCategory] = useState(
+    Object.keys(services)[0]
+  );
+  const activeTreatments: Treatment[] =
+    services[activeCategory as keyof typeof services];
 
   return (
     <div>
-      <h1 className={`text-7xl p-12 pb-5 bg-white-smoke ${merriweather.className}`}>Services</h1>
-      <div className='my-0 m-10 py-5 flex-col inline-flex text-center'>
-        <div className='card-outer'>
+      <motion.h1
+        className={`text-7xl text-center p-12 pb-5 bg-white-smoke ${merriweather.className}`}
+        variants={fadeInDown}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        Services
+      </motion.h1>
+
+      <motion.div
+        className="flex flex-col items-center text-center m-2"
+        variants={fadeInDown}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="card-outer flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
-            <button
+            <motion.button
               key={category.key}
               onClick={() => setActiveCategory(category.key)}
-              className={`category-btn${activeCategory === category.key ? ' active' : ''}`}
+              className={`category-btn${
+                activeCategory === category.key ? " active" : ""
+              }`}
               type="button"
+              whileHover={{ scale: 1.03 }}
             >
               {category.title}
-            </button>
+            </motion.button>
           ))}
         </div>
-      </div>
-      
-      <div key={activeCategory} 
-      className="treatments-list">
+      </motion.div>
+
+      <motion.div
+        key={activeCategory}
+        className="treatments-list"
+        variants={fadeInUp}
+        initial="hidden"
+        animate="show"
+      >
         {activeTreatments.map((treatment, index) => (
-          <div className="treatment-card" key={treatment.name || index}>
-            <h4>{treatment.name}</h4>
-            <p>{treatment.description}</p>
-            <p><strong>Price:</strong> {treatment.price}</p>
-          </div>
+          <motion.div
+            className="treatment-card"
+            key={treatment.name || index}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: index * 0.06 }}
+          >
+            <h4 className="text-lg font-semibold text-dark-green">
+              {treatment.name}
+            </h4>
+            <p className="text-sm text-eerie-black/80 my-2">
+              {treatment.description}
+            </p>
+            <p className="text-rose-gold font-semibold">
+              <strong>Price:</strong> {treatment.price}
+            </p>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
