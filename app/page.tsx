@@ -2,6 +2,7 @@
 import Image from "next/image";
 import ReviewSlider from "./components/reviewslider";
 import { motion } from "motion/react";
+import Link from "next/link";
 import {
   fadeInDown,
   fadeInLeft,
@@ -32,7 +33,7 @@ export default function Home() {
       >
         <Image
           src="/homepage.jpg"
-          alt="Header Image"
+          alt="Spa interior"
           fill
           className="object-cover z-0"
           priority
@@ -90,7 +91,7 @@ export default function Home() {
             <li>Visible results and client satisfaction</li>
           </ul>
           <a
-            href="/contact"
+            href="https://www.fresha.com/a/wrap-shape-ashbourne-rath-cross-business-park-sdtuch0n"
             className="inline-block px-8 py-3 rounded-full bg-dark-green text-rose-gold font-bold shadow hover:bg-rose-gold hover:text-dark-green transition-colors"
           >
             Book a Consultation
@@ -101,20 +102,23 @@ export default function Home() {
           variants={fadeInRight}
           className="flex-1 flex flex-col gap-6 items-center"
         >
-          <Image
-            src="/japaneseheadmassage.jpg"
-            alt="Japanese Head Massage in progress"
-            width={400}
-            height={300}
-            className="rounded-xl shadow-lg object-cover"
-          />
-          <Image
-            src="/whychooseus.jpg"
-            alt="Spa interior"
-            width={400}
-            height={300}
-            className="rounded-xl shadow-lg object-cover"
-          />
+          <div className="w-72 aspect-square relative">
+            <Image
+              src="/japaneseheadmassage.jpg"
+              alt="Japanese Head Massage in progress"
+              fill
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
+
+          <div className="w-72 aspect-square relative">
+            <Image
+              src="/whychooseus.jpg"
+              alt="Spa interior"
+              fill
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </motion.div>
       </motion.section>
 
@@ -129,11 +133,11 @@ export default function Home() {
         <h2 className="text-3xl font-semibold mb-4 text-rose-gold ">
           Treatments
         </h2>
-        <p className="pb-5 max-w-[500px] text-dark-green ">
+        <p className="p-5 max-w-[500px] text-dark-green ">
           Our treatments deliver comprehensive results: redefined body contours,
           reduced bloating from excess fluid, and targeted fat loss.
         </p>
-        <div className="flex flex-col md:flex-row gap-8 items-center">
+        <div className="flex flex-col mb-5 md:flex-row gap-8 items-center">
           {[
             { img: "/wrap.jpg", title: "Body Wraps" },
             { img: "/lpg.jpg", title: "Massage & Mechanical Therapies" },
@@ -165,6 +169,13 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
+
+        <Link
+          href="https://www.fresha.com/a/wrap-shape-ashbourne-rath-cross-business-park-sdtuch0n"
+          className="inline-block px-8 py-3 rounded-full bg-rose-gold text-dark-green font-bold shadow-lg hover:bg-dark-green hover:text-rose-gold transition-colors"
+        >
+          <p>Book Now</p>
+        </Link>
       </motion.section>
 
       {/* Reviews Section */}
@@ -173,7 +184,7 @@ export default function Home() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="min-h-[80vh] flex flex-col justify-center items-center bg-white-smoke"
+        className="min-h-[80vh] py-12 flex flex-col justify-center items-center bg-white-smoke"
       >
         <h2 className="text-3xl font-semibold mb-4 text-rose-gold ">
           Client Reviews
@@ -210,7 +221,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mt-8 text-dark-green  pb-15">
+        <div className="mt-8 text-dark-green p-5 pb-15">
           <p className="font-semibold">Location:</p>
           <p>House, Unit 24B, Killegland, Ashbourne, Co. Meath, A84 XK44</p>
           <p className="font-semibold mt-2">Contact:</p>
@@ -230,6 +241,13 @@ export default function Home() {
             </a>
           </p>
         </div>
+
+        <Link
+          href="https://www.fresha.com/a/wrap-shape-ashbourne-rath-cross-business-park-sdtuch0n"
+          className="inline-block px-8 py-3 mb-5 rounded-full bg-rose-gold text-dark-green font-bold shadow-lg hover:bg-dark-green hover:text-rose-gold transition-colors"
+        >
+          <p>Book Now</p>
+        </Link>
       </motion.section>
     </div>
   );

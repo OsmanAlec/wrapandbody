@@ -3,6 +3,7 @@ import { Merriweather } from "next/font/google";
 import Image from "next/image";
 import { fadeInDown, fadeInUp } from "../components/animations";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -13,7 +14,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[90vh]">
       <h1
-        className={`w-full text-7xl p-15 pb-3 text-center bg-white-smoke ${merriweather.className}`}
+        className={`w-full text-7xl pt-10 p-5 text-center bg-white-smoke ${merriweather.className}`}
       >
         Contacts
       </h1>
@@ -24,21 +25,23 @@ export default function Contact() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
+          className="max-w-lg w-full"
         >
-          <Image
-            src="/salonoutside.jpg"
-            width={700}
-            height={400}
-            alt="contact us photo"
-            className="rounded"
-          />
+          <div className="aspect-square relative w-full">
+            <Image
+              src="/salonoutside.jpg"
+              alt="The outside of the salon"
+              fill
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </motion.div>
         <motion.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="bg-white-smoke border border-rose-gold rounded-xl shadow-md p-8 max-w-lg w-full text-center"
+          className="bg-white-smoke border border-rose-gold rounded-xl shadow-md p-8 max-w-7xl w-full text-center"
         >
           <p className="mb-4 text-2xl font-bold text-dark-green">
             Have a question or want to book an appointment? Reach out!
@@ -87,6 +90,12 @@ export default function Contact() {
               </a>
             </div>
           </div>
+          <Link
+            href="https://www.fresha.com/a/wrap-shape-ashbourne-rath-cross-business-park-sdtuch0n"
+            className="inline-block px-8 py-3 mt-5 rounded-full bg-rose-gold text-dark-green font-bold shadow-lg hover:bg-dark-green hover:text-rose-gold transition-colors"
+          >
+            <p>Book Now</p>
+          </Link>
         </motion.div>
       </div>
     </div>

@@ -12,7 +12,6 @@ const Navigation = () => {
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
-      
     </>
   );
 };
