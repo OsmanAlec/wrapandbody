@@ -1,37 +1,45 @@
 "use client";
-import React, { useState } from 'react';
-import Image from 'next/image';
-import {reviews} from '@/data/reviews';
+import React, { useState } from "react";
+import { reviews } from "@/data/reviews";
 
 const ReviewSlider = () => {
-    const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
 
-    const nextSlide = () => {
-        setCurrent((prev) => (prev + 1) % reviews.length);
-    };
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % reviews.length);
+  };
 
-    const prevSlide = () => {
-        setCurrent((prev) => (prev - 1 + reviews.length) % reviews.length);
-    };
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
 
-    return (
-    <div className="relative w-full max-w-4xl
+  return (
+    <div
+      className="relative w-full max-w-4xl
                     mx-auto py-12 p-6 rounded-lg
-                    shadow-lg bg-gray-50">
+                    shadow-lg bg-gray-50"
+    >
       <div className="overflow-hidden">
-        <div className="flex transition-transform 
-                        duration-700 ease-in-out" 
-                        style={{ transform: `translateX(-${current * 100}%)` }}>
+        <div
+          className="flex transition-transform 
+                        duration-700 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
           {reviews.map((review, index) => (
             <div key={index} className="flex-shrink-0 w-full p-8">
-              <div className="bg-white
+              <div
+                className="bg-white
                               shadow-lg rounded-lg 
                               hover:shadow-xl transition-shadow
-                              duration-300 p-6">
-                <h3 className="text-xl font-semibold 
-                               text-center text-gray-800">{review.name}
-                               </h3>
-                <div className='text-center'>
+                              duration-300 p-6"
+              >
+                <h3
+                  className="text-xl font-semibold 
+                               text-center text-gray-800"
+                >
+                  {review.name}
+                </h3>
+                <div className="text-center">
                   {Array.from({ length: review.stars }).map((_, i) => (
                     <svg
                       key={i}
@@ -44,10 +52,16 @@ const ReviewSlider = () => {
                     </svg>
                   ))}
                 </div>
-                <div className="mt-4 text-gray-600 
-                                text-center italic">
-                  <p className="max-w-xs
-                                mx-auto">{review.quote}</p>
+                <div
+                  className="mt-4 text-gray-600 
+                                text-center italic"
+                >
+                  <p
+                    className="max-w-xs
+                                mx-auto"
+                  >
+                    {review.quote}
+                  </p>
                 </div>
               </div>
             </div>
@@ -56,21 +70,24 @@ const ReviewSlider = () => {
       </div>
 
       {/* Dots for navigation */}
-        <div className="flex justify-center space-x-2 mt-4">
+      <div className="flex justify-center space-x-2 mt-4">
         {reviews.map((_, index) => (
           <button
             key={index}
             className={`h-2 w-2 
-                        rounded-full ${current === index ? 'bg-dark-green' : 
-                        	'bg-gray-300'} transition-all duration-300 hover:cursor-pointer`}
+                        rounded-full ${
+                          current === index ? "bg-dark-green" : "bg-gray-300"
+                        } transition-all duration-300 hover:cursor-pointer`}
             onClick={() => setCurrent(index)}
           />
         ))}
       </div>
 
       {/* Previous button */}
-      <div className="absolute top-1/2 
-                      left-0 transform -translate-y-1/2">
+      <div
+        className="absolute top-1/2 
+                      left-0 transform -translate-y-1/2"
+      >
         <button
           className="p-2 bg-dark-green
                      hover:bg-darker-green
@@ -87,14 +104,20 @@ const ReviewSlider = () => {
             stroke="currentColor"
             className="w-6 h-6"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
       </div>
 
       {/* Next button */}
-      <div className="absolute top-1/2 
-                      right-0 transform -translate-y-1/2">
+      <div
+        className="absolute top-1/2 
+                      right-0 transform -translate-y-1/2"
+      >
         <button
           className="p-2 bg-dark-green
                      hover:bg-darker-green
@@ -111,14 +134,16 @@ const ReviewSlider = () => {
             stroke="currentColor"
             className="w-6 h-6"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
-        </div>
+      </div>
     </div>
-
-        
-    );
+  );
 };
 
 export default ReviewSlider;

@@ -227,17 +227,17 @@ export default function Home() {
           <p className="font-semibold mt-2">Contact:</p>
           <p>
             <a
-              href="mailto:info@wrapandshape.com"
+              href="mailto:wrapshape30@gmail.com"
               className="underline hover:text-rose-gold transition-colors"
             >
-              info@wrapandshape.com
+              wrapshape30@gmail.com
             </a>
             {" | "}
             <a
-              href="tel:+353123456789"
+              href="tel:+353871255502"
               className="underline hover:text-rose-gold transition-colors"
             >
-              +353 1 234 56789
+              +353871255502
             </a>
           </p>
         </div>

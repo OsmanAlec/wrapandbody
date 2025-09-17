@@ -49,16 +49,16 @@ export default function Contact() {
           <div className="mb-4">
             <p className="font-semibold text-rose-gold">Email</p>
             <a
-              href="mailto:info@wrapandshape.com"
+              href="mailto:wrapshape30@gmail.com"
               className="text-dark-green underline hover:text-rose-gold transition-colors"
             >
-              info@wrapandshape.com
+              wrapshape30@gmail.com
             </a>
           </div>
           <div className="mb-4">
             <p className="font-semibold text-rose-gold">Phone</p>
             <a
-              href="tel:+353123456789"
+              href="tel:+353871255502"
               className="text-dark-green underline hover:text-rose-gold transition-colors"
             >
               +353871255502

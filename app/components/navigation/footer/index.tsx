@@ -57,13 +57,13 @@ function Footer() {
         <div className="flex flex-col gap-2 text-right md:text-left">
           <h4 className="text-sm font-semibold text-rose-gold">Contact</h4>
           <a
-            href="mailto:info@wrapandshape.com"
+            href="mailto:wrapshape30@gmail.com"
             className="text-sm footer-link"
           >
-            info@wrapandshape.com
+            wrapshape30@gmail.com
           </a>
-          <a href="tel:+353123456789" className="text-sm footer-link">
-            +353 1 234 56789
+          <a href="tel:+353871255502" className="text-sm footer-link">
+            +353871255502
           </a>
           <address className="not-italic text-sm text-white-smoke/90 mt-2">
             House, Unit 24B, Killegland,
