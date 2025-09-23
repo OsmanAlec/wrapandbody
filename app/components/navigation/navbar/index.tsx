@@ -11,7 +11,7 @@ const merriweather = Merriweather({
 const Navbar = ({ toggle }: { toggle: () => void }) => {
   return (
     <nav className="text-rose-gold fixed top-0 left-0 w-full flex justify-center z-50 bg-dark-green shadow">
-      <Link href="./">
+      <Link href="/">
         <h1
           className={`text-3xl font-bold px-10 py-4 ${merriweather.className}`}
         >
